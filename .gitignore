@@ -1,0 +1,15 @@
+.idea　　　　
+.vscode　　
+logs/
+target/
+help.md
+ 
+.project
+.settings
+.classpath
+ 
+/node_modules/
+/dist/
+/build/
+
+application.properties
