@@ -1,1 +1,14 @@
-/* pages/playlist/playlist.wxss */
+.swiper-img{
+  width: 100%;
+}
+
+.music-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.music-list c-single-music{
+  margin-top: 20rpx;
+}

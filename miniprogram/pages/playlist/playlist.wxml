@@ -1,2 +1,17 @@
-<!--pages/playlist/playlist.wxml-->
-<text>pages/playlist/playlist.wxml</text>
+<view class="playlist-container">
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="2000" duration="1000">
+    <block wx:for="{{swiperImgUrls}}" wx:key="url">
+      <swiper-item>
+        <image class="swiper-img" src="{{item.url}}" mode="widthFix"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 音乐列表 -->
+  <view class="music-list">
+    <block wx:for="{{musicList}}" wx:key="_id">
+      <c-single-music music-data="{{item}}"></c-single-music>
+    </block>
+  </view>
+</view>
