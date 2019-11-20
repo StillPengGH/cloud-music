@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "c-single-music":"/components/single-music/single-music"
-  }
+  },
+  "enablePullDownRefresh": true
 }
