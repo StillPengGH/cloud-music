@@ -1,0 +1,114 @@
+.player-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(16px);
+  z-index: -2;
+}
+
+.player-task {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.pointer {
+  width: 192rpx;
+  height: 320rpx;
+  position: absolute;
+  top: -35rpx;
+  left: 45%;
+  transform: rotate(-13deg);
+  transform-origin: 24rpx 10rpx;
+  transition: transform 0.5s ease;
+  z-index: 999;
+}
+
+.moved {
+  transform: rotate(0deg);
+}
+
+.disc-box {
+  width: 592rpx;
+  height: 592rpx;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  left: 50%;
+  transform: translate(-50%, 130rpx);
+}
+
+.disc-black {
+  width: 592rpx;
+  height: 592rpx;
+}
+
+.disc-img {
+  width: 368rpx;
+  height: 368rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -184rpx;
+  margin-left: -184rpx;
+}
+
+.control {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.control .iconfont {
+  color: #fefefe;
+}
+
+.icon-houtui, .icon-qianjin {
+  font-size: 80rpx;
+}
+
+.icon-bofang, .icon-zanting {
+  font-size: 120rpx;
+  margin: 0 50rpx;
+}
+
+.rotation {
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+}
+
+/* 动画状态停止 */
+
+.rotation-paused {
+  animation-play-state: paused;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progress-bar{
+  width: 90%;
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24%;
+}

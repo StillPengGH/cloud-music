@@ -8,9 +8,10 @@
     </block>
   </swiper>
 
-  <!-- 音乐列表 -->
+  <!-- 歌单列表 -->
   <view class="music-list">
     <block wx:for="{{musicList}}" wx:key="_id">
+      <!-- 单个歌单组件 -->
       <c-single-music music-data="{{item}}"></c-single-music>
     </block>
   </view>

@@ -1,0 +1,26 @@
+<!-- 背景 -->
+<view class="player-container" style="background:url({{coverUrl}}) center/cover no-repeat"></view>
+<view class="player-task"></view>
+
+<view class="player-info">
+  <!-- 指针 -->
+  <image class="pointer  {{isPlaying?'moved':''}}" src="../../images/music/needle.png"></image>
+
+  <!-- 封面信息 -->
+  <view class="disc-box">
+    <image class="disc-black" src="../../images/music/disc.png"></image>
+    <image class="disc-img rotation {{isPlaying?'':'rotation-paused'}}" src="{{coverUrl}}"></image>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="progress-bar">
+    <c-progress-bar bind:onEnd="onNext" />
+  </view>
+
+  <!-- 控制器 -->
+  <view class="control">
+    <text class="iconfont icon-houtui" bindtap="onPrev"></text>
+    <text class="iconfont {{isPlaying?'icon-zanting':'icon-bofang'}}" bindtap="togglePlaying"></text>
+    <text class="iconfont icon-qianjin" bindtap="onNext"></text>
+  </view>
+</view>

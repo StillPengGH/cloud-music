@@ -36,6 +36,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 去单个歌单列表页
+    goToPlaymenu() {
+      let menuId = this.properties.musicData.id;
+      wx.navigateTo({
+        url: '/pages/playmenu/playmenu?menuId=' + menuId
+      })
+    },
+
     // 格式化播放次数,point:保留小数点后几位
     _formatCount(num, point) {
       let numStr = num.toString();

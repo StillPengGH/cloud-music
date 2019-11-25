@@ -47,7 +47,6 @@ Page({
     wx.showLoading({
       title: '加载中',
     });
-
     wx.cloud.callFunction({
       name: 'music',
       data: {

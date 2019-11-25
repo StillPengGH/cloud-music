@@ -1,0 +1,31 @@
+<view class="progress-container">
+  <!-- 当前播放时间 -->
+  <text class="time">{{showTime.currentTime}}</text>
+  <!-- 
+    进度条:
+    movable-area:可移动区域，必须设置width和height属性，不设置默认为10px
+      |--movable-view:在可以移动区域，可以拖拽滑动。
+        |--direction:移动的方向
+          |--all:都可以
+          |--vertical:垂直方向
+          |--horizontal：水平方向
+          |--none:都不可以
+        |--damping：阻尼系数，用于控制x或y改变时的动画和过界回弹的动画，值越大移动越快，默认值20
+        |--x：定义x轴方向的偏移，如果x的值不在可移动范围内，会自动移动到可移动范围；改变x的值会触发动画。
+        |--y：定义y轴方向的偏移，如果y的值不在可移动范围内，会自动移动到可移动范围；改变y的值会触发动画。
+    progress:进度条组件
+      |--stroke-width:进度条的宽度，默认值6
+      |--backgroundColor:未选择进度条的颜色
+      |--activeColor:已选择的进度条颜色
+      |--percent:百分比0-100
+  -->
+  <view class="progress-control">
+    <movable-area class="m-area">
+      <movable-view class="m-view" direction="horizontal" damping="1000" x="{{movableDis}}"
+        bindchange="onChange" bindtouchend="onTouchend"></movable-view>
+    </movable-area>
+    <progress stroke-width="4" backgroundColor="#969696" activeColor="#fff" percent="{{percent}}"></progress>
+  </view>
+  <!-- 音乐总时间 -->
+  <text class="time">{{showTime.totalTime}}</text>
+</view>

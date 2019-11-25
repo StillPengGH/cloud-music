@@ -1,0 +1,14 @@
+<view class="playmenu-container">
+  <!-- 顶部背景 -->
+  <view class="playmenu-cover">
+    <image class="cover-img" src="{{coverImg}}" mode="aspectFill"></image>
+    <view class="cover-task"></view>
+    <view class="top-content">
+      <image class="top-img" src="{{coverImg}}"></image>
+      <view class="top-text">{{menuTitle}}</view>
+    </view>
+  </view>
+
+  <!-- 音乐列表 -->
+  <c-music-list music-list="{{musicList}}"></c-music-list>
+</view>
