@@ -1,0 +1,17 @@
+<!-- 
+  滚动歌词：scroll-view可滚动视图区域，使用竖向滚动时，需要给scroll-view一个固定高度，
+           通过 WXSS 设置 height。组件属性的长度单位默认为px，2.4.0起支持传入单位(rpx/px)。
+    |--scroll-y:允许纵向滚动
+    |--scroll-top:设置竖向滚动条位置
+    |--scroll-with-animation:在设置滚动条位置时使用动画过渡
+ -->
+<scroll-view hidden="{{lyricShow}}" class="lyric-container" scroll-top="{{scrollTop}}" scroll-y 
+  scroll-with-animation="{{true}}">
+  <view class="lyric-panel">
+    <block wx:for="{{lyricList}}" wx:key="item">
+      <view class="lyric {{index == nowLyricIndex?'hightlight-lyric':''}}">
+        {{item.lrc}}
+      </view>
+    </block>
+  </view>
+</scroll-view>

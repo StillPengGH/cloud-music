@@ -7,11 +7,11 @@
     "pages/player/player"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#0ec5a1",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#d81e06",
-    "navigationBarTitleText": "音乐",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#0ec5a1",
+    "navigationBarTitleText": "聆听",
+    "navigationBarTextStyle": "white"
   },
   "requiredBackgroundModes": [
     "audio",
@@ -21,25 +21,25 @@
   "style": "v2",
   "tabBar": {
     "color": "#707070",
-    "selectedColor": "#d81e06",
+    "selectedColor": "#0ec5a1",
     "list": [
       {
         "pagePath": "pages/playlist/playlist",
         "text": "聆听",
-        "iconPath": "images/icons/music.png",
-        "selectedIconPath": "images/icons/music-selected.png"
+        "iconPath": "images/icons/listen.png",
+        "selectedIconPath": "images/icons/listen-selected.png"
       },
       {
         "pagePath": "pages/blog/blog",
         "text": "发现",
-        "iconPath": "images/icons/blog.png",
-        "selectedIconPath": "images/icons/blog-selected.png"
+        "iconPath": "images/icons/find.png",
+        "selectedIconPath": "images/icons/find-selected.png"
       },
       {
         "pagePath": "pages/profile/profile",
         "text": "我的",
-        "iconPath": "images/icons/profile.png",
-        "selectedIconPath": "images/icons/profile-selected.png"
+        "iconPath": "images/icons/my.png",
+        "selectedIconPath": "images/icons/my-selected.png"
       }
     ]
   }

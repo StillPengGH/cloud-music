@@ -34,6 +34,10 @@ Component({
   lifetimes: {
     // 组件在视图层布局完成后执行
     ready() {
+      // 当音乐正在播放，且第二次进入音乐页面时，总时长会变为00:00
+      if(this.data.showTime.totalTime == '00:00'){
+        this.setTotalTime();
+      }
       // 获取进度条长度，和小滑块宽度（进行后续计算）
       this.getMovableDis();
       // 绑定背景音乐监听函数
@@ -78,6 +82,7 @@ Component({
       // 监听背景音乐播放事件
       bgAudioManager.onPlay(() => {
         isMoving = false;
+        this.triggerEvent('onPlay');
       })
 
       // 监听背景音乐停止事件 
@@ -86,6 +91,7 @@ Component({
 
       // 监听背景音乐暂停事件 
       bgAudioManager.onPause(() => {
+        this.triggerEvent('onPause');
       })
 
       // 监听背景音乐加载中事件，当音频因为数据不足，需要停下来加载时会触发。
@@ -111,6 +117,11 @@ Component({
             percent: currentTime / duration * 100,
             ['showTime.currentTime']: `${currentTimeObj.min}:${currentTimeObj.sec}`
           })
+
+          // 联动歌词
+          this.triggerEvent('timeUpdate',{
+            currentTime
+          });
         }
       })
 

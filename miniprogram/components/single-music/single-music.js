@@ -37,7 +37,7 @@ Component({
    */
   methods: {
     // 去单个歌单列表页
-    goToPlaymenu() {
+    goToPlayMenu() {
       let menuId = this.properties.musicData.id;
       wx.navigateTo({
         url: '/pages/playmenu/playmenu?menuId=' + menuId

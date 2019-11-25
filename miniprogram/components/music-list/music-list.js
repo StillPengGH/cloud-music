@@ -1,4 +1,6 @@
 const bgAudioManager = wx.getBackgroundAudioManager();
+// 获取小程序全局唯一App实例
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -17,11 +19,11 @@ Component({
   /**
    * 组件生命周期函数
    */
-  lifetimes:{
+  lifetimes: {
     // 在组件实例被从页面节点树移除时执行,删除缓存中正在播放的歌曲id
-    detached(){
-      wx.removeStorageSync('currentMusicId');
-    }
+    // detached() {
+    //   wx.removeStorageSync('currentMusicId');
+    // }
   },
 
   /**
@@ -32,13 +34,11 @@ Component({
    */
   pageLifetimes: {
     show() {
-      // 在缓存中获取当前播放的音乐，设置那首歌曲标红
-      let currentMusicId = wx.getStorageSync('currentMusicId');
-      if (currentMusicId) {
-        this.setData({
-          selectedId: currentMusicId
-        })
-      }
+      // 获取全局属性中的playingMusicId
+      let currentMusicId = app.getPlayingMusicId();
+      this.setData({
+        selectedId: currentMusicId
+      })
     }
   },
 

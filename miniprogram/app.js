@@ -1,6 +1,5 @@
 App({
-  onLaunch: function () {
-
+  onLaunch: function() {
     // 判断是否支持云开发
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
@@ -16,7 +15,20 @@ App({
         traceUser: true,
       })
     }
-    // 设置小程序全局属性和全局方法
-    this.globalData = {}
+    /**
+     * 设置小程序全局属性和全局方法
+     *  |--playingMusicId：正在播放的音乐id
+     */
+    this.globalData = {
+      playingMusicId: -1
+    }
+  },
+
+  // 定义正在播放音乐id的get、set
+  getPlayingMusicId() {
+    return this.globalData.playingMusicId;
+  },
+  setPlayingMusicId(musicId) {
+    this.globalData.playingMusicId = musicId;
   }
 })

@@ -1,8 +1,15 @@
+<!-- 歌单组件 -->
 <block wx:for="{{musicList}}" wx:key="id">
-  <view class="musiclist-container {{selectedId == item.id ? 'selected' : ''}}" data-music-id="{{item.id}}" data-index="{{index}}" bindtap="goToMusicDetail">
+  <!-- selectedId是当前被选中（播放中）的音乐id，如果等于我们音乐列表中的某个id，那么该条就被标记为被选中状态 -->
+  <view class="musiclist-container {{selectedId == item.id ? 'selected' : ''}}" data-music-id="{{item.id}}" 
+    data-index="{{index}}" bindtap="goToMusicDetail">
+
+    <!-- 歌曲序号 -->
     <view class="musiclist-index">
       {{index+1}}
     </view>
+
+    <!-- 歌曲信息 -->
     <view class="musiclist-info">
       <view class="musiclist-name">
         {{item.name}}

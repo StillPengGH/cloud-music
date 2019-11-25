@@ -14,9 +14,10 @@ Page({
    */
   async onLoad(options) {
     wx.showLoading({
-      title: '加载中',
-      mask: true
+      title: '加载中'
     });
+
+    // 根据歌单id获取歌单的相关信息（包括歌单下所有歌曲）
     let menuId = options.menuId;
     let res = await wx.cloud.callFunction({
       name: "music",
@@ -36,7 +37,7 @@ Page({
     wx.hideLoading();
   },
 
-  _setMusicList(){
+  _setMusicList() {
     wx.setStorageSync("musicList", this.data.musicList);
   }
 })

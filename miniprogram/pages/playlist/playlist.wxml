@@ -1,3 +1,4 @@
+<!-- 歌曲首页  -->
 <view class="playlist-container">
   <!-- 轮播图 -->
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="2000" duration="1000">
@@ -14,5 +15,9 @@
       <!-- 单个歌单组件 -->
       <c-single-music music-data="{{item}}"></c-single-music>
     </block>
+  </view>
+
+  <view class="no-more" hidden="{{isMore}}">
+    没有个多歌单了(*￣︶￣)
   </view>
 </view>

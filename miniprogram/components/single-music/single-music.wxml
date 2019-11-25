@@ -1,5 +1,5 @@
 <!-- 单个歌单组件 -->
-<view class="music-box" bindtap="goToPlaymenu">
+<view class="music-box" bindtap="goToPlayMenu">
   <image class="music-img" src="{{musicData.picUrl}}"></image>
   <text class="music-count">{{_count}}</text>
   <view class="music-name">{{musicData.name}}</view>

@@ -16,13 +16,15 @@ Page({
         url: 'http://p1.music.126.net/Yo-FjrJTQ9clkDkuUCTtUg==/109951164169441928.jpg',
       }
     ],
-    musicList: []
+    musicList: [],
+    isMore: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    // 加载歌单数据
     this._loadData();
   },
 
@@ -30,9 +32,11 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
+    // 设置歌单列表数组为空
     this.setData({
       musicList: []
     });
+    // 从新加载一次数据即可
     this._loadData();
   },
 
@@ -43,23 +47,38 @@ Page({
     this._loadData();
   },
 
+  // 加载歌单数据
   _loadData() {
+    // 如果没有更多了，停止加载
+    if (!this.data.isMore) {
+      return
+    }
+    // 显示加载中
     wx.showLoading({
-      title: '加载中',
+      title: '正在加载歌单'
     });
+
+    // 调用云函数music中路由为getPlayList，获取歌单
     wx.cloud.callFunction({
       name: 'music',
       data: {
         start: this.data.musicList.length,
         count: MAX_LIMIT,
-        $url: "getMusics"
+        $url: "getPlayList"
       }
     }).then((res) => {
+      // 如果获取的歌单数组长度小于设置的15条，或者数组长度等于0，设置isMore代表没有更多
+      if (res.result.length < MAX_LIMIT || res.result.length === 0) {
+        this.setData({
+          isMore: false
+        });
+      }
       this.setData({
         musicList: this.data.musicList.concat(res.result)
       });
       // 停止下拉刷新的三个小点及空白处
       wx.stopPullDownRefresh();
+      // 关闭加载中图标
       wx.hideLoading();
     });
   }

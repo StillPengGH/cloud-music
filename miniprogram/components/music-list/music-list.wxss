@@ -1,12 +1,13 @@
 .musiclist-container {
   display: flex;
   align-items: center;
-  padding: 14rpx 20rpx;
+  padding: 20rpx 30rpx 20rpx 0;
 }
 
 .musiclist-index {
   color: #888;
   width: 80rpx;
+  text-align: center;
 }
 
 .musiclist-info {
@@ -33,5 +34,5 @@
 }
 
 .selected view, .selected text {
-  color: #d81e06;
+  color: #0ec5a1;
 }

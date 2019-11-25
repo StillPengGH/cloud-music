@@ -1,20 +1,24 @@
+<!-- 歌曲播放页 -->
 <!-- 背景 -->
 <view class="player-container" style="background:url({{coverUrl}}) center/cover no-repeat"></view>
 <view class="player-task"></view>
 
 <view class="player-info">
   <!-- 指针 -->
-  <image class="pointer  {{isPlaying?'moved':''}}" src="../../images/music/needle.png"></image>
+  <image class="pointer  {{isPlaying?'moved':''}}" src="../../images/music/needle.png" hidden="{{isLyricShow}}"></image>
 
   <!-- 封面信息 -->
-  <view class="disc-box">
+  <view class="disc-box" bind:tap="changeLyricShow" hidden="{{isLyricShow}}">
     <image class="disc-black" src="../../images/music/disc.png"></image>
     <image class="disc-img rotation {{isPlaying?'':'rotation-paused'}}" src="{{coverUrl}}"></image>
   </view>
 
+  <!-- 歌词 -->
+  <c-lyric class="lyric" lyric-show="{{!isLyricShow}}" lyric="{{lyric}}" bind:tap="changeLyricShow"/>
+
   <!-- 进度条 -->
   <view class="progress-bar">
-    <c-progress-bar bind:onEnd="onNext" />
+    <c-progress-bar bind:onEnd="onNext" bind:timeUpdate="timeUpdate" bind:onPlay="playMusic" bind:onPause="pauseMusic"/>
   </view>
 
   <!-- 控制器 -->

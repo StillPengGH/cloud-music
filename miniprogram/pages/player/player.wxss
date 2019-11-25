@@ -18,6 +18,14 @@
   z-index: -1;
 }
 
+.player-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .pointer {
   width: 192rpx;
   height: 320rpx;

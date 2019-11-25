@@ -22,7 +22,7 @@ exports.main = async(event, context) => {
   });
 
   // 获取歌单列表
-  app.router('getMusics', async(ctx, next) => {
+  app.router('getPlayList', async(ctx, next) => {
     let start = event.start;
     let count = event.count;
     let result = await db.collection('musiclist')
@@ -41,9 +41,16 @@ exports.main = async(event, context) => {
   });
 
   // 根据musicId获取音乐播放地址
-  app.router('getMusicUrl', async (ctx, next) => {
+  app.router('getMusicUrl', async(ctx, next) => {
     let musicId = event.musicId;
     let result = await request(BASE_URL + `/song/url?id=${musicId}`);
+    ctx.body = JSON.parse(result);
+  });
+
+  // 根据musicId获取音乐歌词
+  app.router('lyric', async(ctx, next) => {
+    let musicId = event.musicId;
+    let result = await request(BASE_URL + `/lyric?id=${musicId}`);
     ctx.body = JSON.parse(result);
   });
 
