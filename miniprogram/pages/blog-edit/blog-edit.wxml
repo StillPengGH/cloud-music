@@ -1,0 +1,32 @@
+<!-- Page:编辑新鲜事页面 -->
+<!-- 编辑区域 -->
+<view class="container">
+  <!-- 
+    输入内容textarea
+      |--maxlength：最大输入，默认140个，设置为-1，不限制最大长度
+      |--auto-focus：自动聚焦，拉起键盘。默认false
+      |--bindinput：键盘输入触发事件。不能写成bind:input。
+      |--bindfocus：获取焦点时触发事件。
+      |--bindblur：失去焦点触发事件。
+   -->
+  <textarea class="content" placeholder="分享新鲜事" maxlength="140" auto-focus 
+    bindinput="onInput" bindfocus="onFocus" bindblur="onBlur"></textarea>
+  <view class="image-box">
+    <!-- 循环选择的图片 -->
+    <block wx:for="{{images}}" wx:key="*this">
+      <view class="single-image">
+        <i class="iconfont icon-close" bindtap="onDelete" data-index="{{index}}"></i>
+        <image class="image" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-imgsrc="item"></image>
+      </view>
+    </block>
+    <!-- 选择图片 -->
+    <view class="single-image choose" bindtap="onChooseImage" hidden="{{!chooseShow}}">
+      <i class="iconfont icon-tianjia"></i>
+    </view>
+  </view>
+</view>
+<!-- 底部 -->
+<view class="footer" style="bottom:{{footerBottom}}px">
+  <text class="footer-text">{{inputNum}}</text>
+  <view class="footer-btn">发布</view>
+</view>

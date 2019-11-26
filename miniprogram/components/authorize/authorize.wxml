@@ -1,0 +1,8 @@
+<!-- 授权组件，内部调用了底部自定义模态框（这里的封装是为了把授权业务抽离出来） -->
+<c-bottom-modal modalShow="{{modalShow}}">
+  <!-- 通过插槽定义组件内部内容 -->
+  <view slot="content">
+    <!-- 微信开放能力 -->
+    <button class="authorize-btn" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取微信授权信息</button>
+  </view>
+</c-bottom-modal>

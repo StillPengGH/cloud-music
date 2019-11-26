@@ -1,0 +1,15 @@
+<!-- 底部模态框 -->
+<view class="bm-container" hidden="{{!modalShow}}">
+  <view class="bm-box">
+    <!-- 关闭按钮 -->
+    <i class="iconfont icon-close" bind:tap="onClose"></i>
+    <!-- 
+      内容插槽（在调用的页面中插入） 
+        |--单个插槽：不用定义name，在page页面直接用一个view包裹内容即可。
+        |--多个插槽：
+          |--要在组件options里设置multipleSlots:true
+          |--又称“具名插槽”，要定义name值
+    -->
+    <slot name="content"></slot>
+  </view>
+</view>

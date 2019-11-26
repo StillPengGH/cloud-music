@@ -1,2 +1,22 @@
-<!--pages/blog/blog.wxml-->
-<text>pages/blog/blog.wxml</text>
+<!-- 发现页面 -->
+<view class="container">
+  <!-- 顶部搜索 -->
+  <view class="header">
+    <!-- 发布图标 -->
+    <view class="find-box" bind:tap="onPublish">
+      <i class="iconfont icon-public"></i>
+    </view>
+    <!-- 搜索框 -->
+    <view class="search-box">
+      <!-- 
+        搜索自定义组件：
+          1.iconfont、icon-chazhao为外部样式类，传递到组件内部，通过externalClasses接收。
+          2.placeholder：属性传递，在外部设置占位字符串内容
+       -->
+      <c-search iconfont="iconfont" icon-chazhao="icon-chazhao" placeholder="请输入关键字"></c-search>
+    </view>
+  </view>
+
+  <!-- 授权组件（内部包含底部自定义模态框） -->
+  <c-authorize modalShow="{{modalShow}}" bind:authSuccess="onAuthSuccess" bind:authFail="onAuthFail"></c-authorize>
+</view>

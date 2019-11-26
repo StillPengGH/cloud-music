@@ -1,0 +1,10 @@
+.authorize-btn {
+  position: absolute;
+  height: 80rpx;
+  background-color: #0ec5a1;
+  color: #fff;
+  font-size: 32rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

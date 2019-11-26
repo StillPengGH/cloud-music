@@ -1,0 +1,32 @@
+/* 背景遮罩层 */
+.bm-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* 内容面板 */
+.bm-box {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  min-height: 300rpx;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+.bm-container .icon-close{
+  position: absolute;
+  font-size: 50rpx;
+  right: 10rpx;
+  top: 10rpx;
+  padding: 10rpx 10rpx;
+  color: #333;
+}
+
+
+

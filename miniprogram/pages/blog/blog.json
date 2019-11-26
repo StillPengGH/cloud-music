@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "c-search": "/components/search/search",
+    "c-bottom-modal": "/components/bottom-modal/bottom-modal",
+    "c-authorize": "/components/authorize/authorize"
+  },
+  "navigationBarTitleText": "发现"
 }

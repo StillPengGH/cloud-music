@@ -44,7 +44,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -64,6 +64,20 @@
 					"name": "pages/player/player",
 					"pathName": "pages/player/player",
 					"query": "musicId=1404516425&index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/blog/blog",
+					"pathName": "pages/blog/blog",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/blog-edit/blog-edit",
+					"pathName": "pages/blog-edit/blog-edit",
+					"query": "nickName=Moon&avatarUrl=https://wx.qlogo.cn/mmopen/vi_32/BVfwVibX5vbyag7YlbLibJrlQGQNfVl6sib1gMbJBPicXpXuK3SasAiayMQvDuzxibnmN5UVpr2ibUQrXGK1ZIwnm93OA/132",
 					"scene": null
 				}
 			]

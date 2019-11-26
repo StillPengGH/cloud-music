@@ -1,0 +1,7 @@
+<!-- 搜索组件 -->
+<view class="search-container">
+  <!-- iconfont和icon-chazhao是通过外部样式类引入进来，inner为内部自定义的样式 -->
+  <i class="iconfont icon-chazhao inner"></i>
+  <input class="search-input" placeholder="{{placeholder}}"></input>
+  <view class="search-btn" bindtap="onSearch">搜索</view>
+</view>

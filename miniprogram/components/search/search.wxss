@@ -1,0 +1,32 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.inner {
+  position: absolute;
+  left: 18rpx;
+}
+
+.search-input {
+  flex: 3;
+  background-color: #f5f5f5;
+  border-radius: 50rpx;
+  height: 68rpx;
+  padding-left: 60rpx;
+  font-size: 28rpx;
+}
+
+.search-btn {
+  flex: 1;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  background-color: #0ec5a1;
+  color: #fff;
+  margin: 0 20rpx;
+  font-size: 28rpx;
+}

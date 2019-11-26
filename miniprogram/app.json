@@ -2,6 +2,7 @@
   "pages": [
     "pages/playlist/playlist",
     "pages/blog/blog",
+    "pages/blog-edit/blog-edit",
     "pages/profile/profile",
     "pages/playmenu/playmenu",
     "pages/player/player"
