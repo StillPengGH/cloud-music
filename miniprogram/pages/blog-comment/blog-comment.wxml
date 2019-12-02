@@ -1,0 +1,32 @@
+<scroll-view class="container" scroll-y>
+  <!-- 卡片组件 -->
+  <view class="blog-card">
+    <c-blog-card blog-data="{{blogDetail}}"></c-blog-card>
+  </view>
+
+  <!-- 评论 -->
+  <view class="comment-list" wx:if="{{isHas}}">
+    <view class="title">评论列表</view>
+    <block wx:for="{{commentList}}" wx:key="_id">
+      <view class="comment-item">
+        <view class="avatar-name">
+          <image class="avatar" src="{{item.avatarUrl}}"></image>
+          <view class="name">{{item.nickName}}</view>
+        </view>
+        <view class="content">{{item.comment}}</view>
+        <view class="time">{{item.createTime}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="comment-list" wx:if="{{!isHas}}">
+    <view class="title">评论列表</view>
+    <view class="no-comment">暂无评论</view>
+  </view>
+</scroll-view>
+
+<!-- 操作组件 -->
+<view class="blog-ctrl">
+  <view class="blog-ctrl-content"></view>
+  <c-blog-ctrl iconfont="iconfont" icon-pinglun="icon-pinglun" icon-fenxiang="icon-fenxiang" 
+    blog-id="{{blogId}}" blog="{{blogDetail}}" bind:refreshPage="_loadBlogInfo"></c-blog-ctrl>
+</view>

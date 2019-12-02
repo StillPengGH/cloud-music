@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.comment {
+  text-align: center;
+  flex: 1;
+}
+
+.share {
+  text-align: center;
+  flex: 1;
+}
+
+.txt {
+  width: 75%;
+  padding: 60rpx 20rpx 20rpx 20rpx;
+}
+
+.btn{
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  background-color: #0ec5a1;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.share-btn{
+  background-color: #fff;
+  padding: 0;
+  height: 100%;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: normal;
+}
+
+.share-btn::after {
+  display: none;
+}
+
+.share-hover::after {
+  border: 0;
+}

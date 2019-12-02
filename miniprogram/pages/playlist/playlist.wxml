@@ -17,7 +17,5 @@
     </block>
   </view>
 
-  <view class="no-more" hidden="{{isMore}}">
-    没有个多歌单了(*￣︶￣)
-  </view>
+  <c-no-more no-more="{{noMore}}" content="{{noMoreContent}}"/>
 </view>

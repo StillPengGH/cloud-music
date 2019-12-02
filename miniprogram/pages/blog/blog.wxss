@@ -1,3 +1,7 @@
+.page {
+  background-color: #f1f1f1;
+}
+
 .container{
   position: absolute;
   top: 0;
@@ -31,4 +35,22 @@
 
 .search-box{
   flex: 1;
+  margin-right: 20rpx;
+}
+
+.blog-list{
+  margin-top: 120rpx;
+  background-color: #f1f1f1;
+}
+
+.blog-item{
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.icon-pinglun, .icon-fenxiang {
+  margin-right: 16rpx;
+  color: #333;
+  font-size: 32rpx;
+
 }

@@ -1,0 +1,23 @@
+<view class="container" >
+  <!-- 头像、名字、日期 -->
+  <view class="card-header">
+    <view class="avatar-image">
+      <image class="a-image" src="{{blogData.avatarUrl}}"></image>
+    </view>
+    <view class="name-date">
+      <view class="name">{{blogData.nickName}}</view>
+      <view class="date">{{_createTime}}</view>
+    </view>
+  </view>
+
+  <!-- 内容 -->
+  <view class="content">{{blogData.content}}</view>
+
+  <!-- 图片 -->
+  <view class="blog-images">
+    <block wx:for="{{blogData.img}}" wx:key="index">
+      <!-- 浏览图片用catchtap，防止事件冒泡，即：当我点击previewImage触发外层去博客详情页事件goToComment -->
+      <image class="b-image" src="{{item}}" mode="aspectFill" catchtap="previewImage" data-imgSrc="{{item}}"></image>
+    </block>
+  </view>
+</view>

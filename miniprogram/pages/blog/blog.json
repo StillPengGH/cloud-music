@@ -2,7 +2,11 @@
   "usingComponents": {
     "c-search": "/components/search/search",
     "c-bottom-modal": "/components/bottom-modal/bottom-modal",
-    "c-authorize": "/components/authorize/authorize"
+    "c-authorize": "/components/authorize/authorize",
+    "c-blog-card": "/components/blog-card/blog-card",
+    "c-blog-ctrl": "/components/blog-ctrl/blog-ctrl",
+    "c-no-more": "/components/no-more/no-more"
   },
-  "navigationBarTitleText": "发现"
+  "navigationBarTitleText": "发现",
+  "enablePullDownRefresh": true
 }

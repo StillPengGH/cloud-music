@@ -17,7 +17,8 @@ Page({
       }
     ],
     musicList: [],
-    isMore: true
+    noMore: false,
+    noMoreContent: '没有更多歌单了(*￣︶￣)'
   },
 
   /**
@@ -50,7 +51,7 @@ Page({
   // 加载歌单数据
   _loadData() {
     // 如果没有更多了，停止加载
-    if (!this.data.isMore) {
+    if (this.data.noMore) {
       return
     }
     // 显示加载中
@@ -67,10 +68,10 @@ Page({
         $url: "getPlayList"
       }
     }).then((res) => {
-      // 如果获取的歌单数组长度小于设置的15条，或者数组长度等于0，设置isMore代表没有更多
-      if (res.result.length < MAX_LIMIT || res.result.length === 0) {
+      // 如果获取的歌单数组长度小于设置的15条,设置noMore代表没有更多
+      if (res.result.length < MAX_LIMIT) {
         this.setData({
-          isMore: false
+          noMore: true
         });
       }
       this.setData({

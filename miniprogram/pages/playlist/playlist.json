@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "c-single-music":"/components/single-music/single-music"
+    "c-single-music": "/components/single-music/single-music",
+    "c-no-more": "/components/no-more/no-more"
   },
   "enablePullDownRefresh": true
 }

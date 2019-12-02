@@ -27,6 +27,6 @@
   border-radius: 6rpx;
   background-color: #0ec5a1;
   color: #fff;
-  margin: 0 20rpx;
+  margin-left: 20rpx;
   font-size: 28rpx;
 }

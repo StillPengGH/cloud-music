@@ -28,5 +28,5 @@
 <!-- 底部 -->
 <view class="footer" style="bottom:{{footerBottom}}px">
   <text class="footer-text">{{inputNum}}</text>
-  <view class="footer-btn">发布</view>
+  <view class="footer-btn" bindtap="onSubmit">发布</view>
 </view>

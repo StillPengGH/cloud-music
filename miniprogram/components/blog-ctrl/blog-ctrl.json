@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "c-bottom-modal": "/components/bottom-modal/bottom-modal",
+    "c-authorize": "/components/authorize/authorize"
+  }
+}

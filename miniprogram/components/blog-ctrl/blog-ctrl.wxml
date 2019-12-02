@@ -1,0 +1,28 @@
+<!-- 评论、分享组件 -->
+<view class="container">
+  <view class="comment" bindtap="onComment">
+    <i class="iconfont icon-pinglun"></i>
+    <text class="txt">评论</text>
+  </view>
+
+  <!-- <view class="share">
+    <i class="iconfont icon-fenxiang"></i>
+    <text class="txt">分享</text>
+  </view> -->
+  <button open-type="share" data-blog="{{blog}}" class="share-btn" hover-class="share-hover">
+    <i class="iconfont icon-fenxiang"></i>
+    <text>分享</text>
+  </button>
+</view>
+
+<!-- 授权模态框 -->
+<c-authorize modalShow="{{authModalShow}}" bind:authSuccess="onAuthSuccess" bind:authFail="onAuthFail" />
+
+<!-- 底部评论模态框 -->
+<c-bottom-modal modalShow="{{commentModalShow}}">
+  <!-- 发送评论，并生成模板消息，模板消息需要在form组件设置report-submit为true，这样提交后会生成formId -->
+  <form slot="content" bind:submit="onSubmit" report-submit="{{true}}">
+    <textarea name="comment" class="txt" placeholder="写评论..." value="{{comment}}" fixed="{{true}}"></textarea>
+    <button class="btn" form-type="submit" size="mini">发送</button>
+  </form>
+</c-bottom-modal>
