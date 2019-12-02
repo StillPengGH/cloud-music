@@ -16,7 +16,7 @@
     <block wx:for="{{images}}" wx:key="*this">
       <view class="single-image">
         <i class="iconfont icon-close" bindtap="onDelete" data-index="{{index}}"></i>
-        <image class="image" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-imgsrc="item"></image>
+        <image class="image" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-imgsrc="{{item}}"></image>
       </view>
     </block>
     <!-- 选择图片 -->

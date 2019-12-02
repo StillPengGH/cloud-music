@@ -6,7 +6,9 @@
     "pages/blog-comment/blog-comment",
     "pages/profile/profile",
     "pages/playmenu/playmenu",
-    "pages/player/player"
+    "pages/player/player",
+    "pages/profile-hisplay/profile-hisplay",
+    "pages/profile-discover/profile-discover"
   ],
   "window": {
     "backgroundColor": "#0ec5a1",

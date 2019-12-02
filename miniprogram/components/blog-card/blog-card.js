@@ -21,8 +21,9 @@ Component({
   methods: {
     // 查看图片
     previewImage(event) {
+      console.log(event);
       wx.previewImage({
-        current: event.target.dataset.imgSrc,
+        current: event.target.dataset.imgsrc,
         urls: this.data.blogData.img,
       })
     }

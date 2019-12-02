@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "c-progress-bar":"/components/progress-bar/progress-bar",
-    "c-lyric":"/components/lyric/lyric"
-  }
+    "c-progress-bar": "/components/progress-bar/progress-bar",
+    "c-lyric": "/components/lyric/lyric"
+  },
+  "disableScroll": true
 }

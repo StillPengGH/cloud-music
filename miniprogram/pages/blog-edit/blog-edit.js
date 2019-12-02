@@ -120,6 +120,7 @@ Page({
    * 查看图片（放大查看）
    */
   previewImage(event) {
+    console.log(event);
     wx.previewImage({
       current: event.target.dataset.imgsrc, // 当前图片路径
       urls: this.data.images // 所有图片集合
